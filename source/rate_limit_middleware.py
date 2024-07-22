@@ -8,7 +8,7 @@ class RateLimitMiddleware:
         self.user_requests = defaultdict(lambda: deque(maxlen=1000))  # Limit to 1000 requests
 
     def __call__(self, request):
-        user_id = request.META.get('REMOTE_ADDR')  # Should probably implement something more accurate, like maybe looking at request metadata
+        user_id = request.META.get('REMOTE_ADDR')  # Should probably implement something more accurate, like maybe looking at request metadata, user agent, or provided user ID
         current_time = time()
         
         self.user_requests[user_id].append(current_time)
