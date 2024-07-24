@@ -12,3 +12,12 @@ This WAF PoC contains 3 separate injection detection mechanisms:
 - The SQL injection middleware, that intercepts incoming ad outgoing requests, and checks for strings that can be used for injection. You can find the code for this in 'middleware.py'.
 
 - The rate limiting middleware limits each user to 1000 requests per minute, on a running base. 
+
+# What's missing?
+
+WSGI threading implementation of stats:
+- Create a queue with `queue` library
+- Start a thread with `thread` library
+- Send each event to the queue
+- Take event from queue and write to log file/ logging software
+- Add stats collector to the functions that need to be logged
