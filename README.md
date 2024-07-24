@@ -1,7 +1,7 @@
 ## WAF PoC
 
 # Install
-You can install the package with 'pip install waf' and use the package with 'import waf'. 
+You can install the package with '''pip install waf''' and use the package with '''import waf'''. 
 The package adds itself to the Django projects Middleware and apps.
 
 # How does it work?
